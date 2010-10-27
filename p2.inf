@@ -1,0 +1,7 @@
+instructions.configure=\
+	addRepository(type:0,location:http${#58}//static.bada.com/product-update/);\
+	addRepository(type:1,location:http${#58}//static.bada.com/product-update/);\
+	addRepository(type:0,location:http${#58}//static.bada.com/feature-update/);\
+	addRepository(type:1,location:http${#58}//static.bada.com/feature-update/);\
+	addRepository(type:0,location:http${#58}//download.eclipse.org/releases/galileo/);\
+	addRepository(type:1,location:http${#58}//download.eclipse.org/releases/galileo/);

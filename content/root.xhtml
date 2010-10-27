@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>root.xhtml</title>
+  <link rel="stylesheet" href="shared.css" type="text/css" />
+  <link rel="stylesheet" href="root.css" type="text/css" />
+ <script type="text/javascript">
+// <![CDATA[
+function correctPNG()
+{
+	if ((navigator.appName == 'Microsoft Internet Explorer') && (navigator.appVersion.indexOf('MSIE 7') == -1) && (navigator.appVersion.indexOf('MSIE 8') == -1)) // IE < v7.x (+ Maxthon v1.x/v2.x , AOL , ...)
+	{
+		for(var i=0; i<document.images.length; i++)
+		{
+			var img = document.images[i]
+			var imgName = img.src.toUpperCase()
+			if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+			{
+				var imgID = (img.id) ? "id='" + img.id + "' " : ""
+				var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+				var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+				var imgStyle = "display:inline-block;" + img.style.cssText
+				if (img.align == "left") imgStyle = "float:left;" + imgStyle
+				if (img.align == "right") imgStyle = "float:right;" + imgStyle
+				if (img.parentElement.href) imgStyle = "cursor:pointer;" + imgStyle
+				var strNewHTML = "<span " + imgID + imgClass + imgTitle
+				+ " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+				+ "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+				+ "(src=\'" + img.src + "\', sizingMethod='scale');\"><\/span>"
+				img.outerHTML = strNewHTML
+				i = i-1
+			}
+		}
+	}
+}
+// ]]>
+</script>
+</head>
+<body onload="correctPNG();" style="min-width:25%;">
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  
+ 		<div style=" width:130px; margin-left:1px; margin-right:1px; ">
+			<a href="http://org.eclipse.ui.intro/showHelpTopic?id=/PLUGINS_ROOT/com.osp.devguide.help/html/overview_of_bada/overview_of_bada.htm" id="overview">
+    		<img id="img-overview" border="0" src="overview.png" alt="Overview" />              
+	   		</a>
+   		</div>
+ 		
+ 		<div style=" width:130px; margin-left:1px; margin-right:1px; ">
+   			<a href="http://org.eclipse.ui.intro/showHelpTopic?id=//PLUGINS_ROOT/com.osp.apireference.help/namespaceOsp.html"> 
+   			<img id="img-apireference" border="0" src="apireference.png" alt="API Referenece" />              
+   			</a> 
+ 		</div>
+ 	
+		<div style=" width:130px; margin-left:1px; margin-right:1px; ">
+			<a href="http://org.eclipse.ui.intro/showHelpTopic?id=//PLUGINS_ROOT/com.osp.devguide.help/html/index.htm"> 
+            <img id="img-developerguide" border="0" src="developersguide.png" alt="Developer Guide" />
+            </a>
+		</div>
+		
+		<div style=" width:150px; margin-left:1px; margin-right:1px; ">
+            <a href="http://org.eclipse.ui.intro/showHelpTopic?id=//PLUGINS_ROOT/com.osp.appuiguide.help/html/index.htm"> 
+            <img id="img-uiguide" border="0" src="tutorial.png" alt="Application UI Guide" />
+            </a>
+        </div>
+        
+        <div style=" width:130px; margin-left:1px; margin-right:1px; ">
+            <a href="http://org.eclipse.ui.intro/close"> 
+            <img id="img-workbench" border="0" src="workbench.png" alt="Workbench" />
+            </a>
+        </div>
+</body>
+</html>
